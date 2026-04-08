@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Bisa Matematika</title>
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --secondary: #1b5e20;
+            --bg: #f0f4f0;
+            --card-white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+             margin: 5px 0 15px 0;
+            font-size: 2.8rem;
+            color: var(--primary);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header h2 {
+            margin: 5px 0 15px 0;
+            font-size: 2.8rem;
+            color: var(--primary);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            margin: 0 auto;
+            font-size: 1rem;
+            color: #555;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* Meme Section */
+        .meme-container {
+            margin: 30px 0;
+            max-width: 420px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            background: white;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .meme-container:hover {
+            transform: scale(1.02);
+        }
+
+        .meme-container img {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+
+        /* Menu Section */
+        .menu-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .menu-box {
+            background: var(--card-white);
+            width: 180px;
+            padding: 25px 15px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(46, 125, 50, 0.15);
+        }
+
+        /* Description Area */
+        .description-text {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #777;
+            font-style: italic;
+            height: 40px; 
+            transition: all 0.3s ease;
+            text-align: center; 
+            width: 100%;
+            max-width: 500px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Selamat datang di</h1>
+        <h2>Website Cerdas Matematika</h2>
+        <p class="subtitle">Website yang diperuntukkan untuk belajar matematika 
+        hingga <strong>wareg</strong> dan paham dengan konsep, rumus bangun datar</p>
+    </header>
+
+    <div class="meme-container">
+        <img src="meme.PNG" alt="Galaxy Brain Math Meme">
+    </div>
+
+    <div class="menu-container">
+        <a href="#" class="menu-box" 
+           onmouseover="updateInfo('Mempelajari & memahami konsep, rumus, serta bentuk bangun datar.')" 
+           onmouseout="resetInfo()">
+            <span style="font-size: 1.8rem;">📖</span>
+            <span>Materi</span>
+        </a>
+
+        <a href="tampilanDepan.html" class="menu-box" 
+           onmouseover="updateInfo('Menghitung luas bangun datar secara instan dengan langkah-langkah yang jelas.')" 
+           onmouseout="resetInfo()">
+            <span style="font-size: 1.8rem;">🧮</span>
+            <span>Kalkulator</span>
+        </a>
+    </div>
+
+    <div id="info-box" class="description-text">
+        Arahkan kursor ke tombol untuk melihat detail...
+    </div>
+
+    <script>
+        const infoBox = document.getElementById('info-box');
+
+        function updateInfo(text) {
+            infoBox.innerText = text;
+            infoBox.style.color = "#2e7d32";
+            infoBox.style.fontStyle = "normal";
+            infoBox.style.fontWeight = "600";
+            infoBox.style.opacity = "1";
+        }
+
+        function resetInfo() {
+            infoBox.innerText = "Arahkan kursor ke tombol untuk melihat detail...";
+            infoBox.style.color = "#777";
+            infoBox.style.fontStyle = "italic";
+            infoBox.style.fontWeight = "400";
+            infoBox.style.opacity = "0.7";
+        }
+    </script>
+
+</body>
+</html>
